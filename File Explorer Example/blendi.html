@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+    .fa-folder:before {
+      color: #b9d9f9;
+    }
+
+    body>div>ul {
+      padding-left: 20px;
+    }
+
+    .femijet {
+      margin-left: 40px !important;
+    }
+
+
+
+    @media(min-width:600px) {
+      .container {
+        height: 400px;
+        width: 1000px;
+        position: absolute;
+        top: calc(50% - 200px);
+        left: calc(50% - 500px);
+        display: flex;
+      }
+    }
+
+    .sidenav li {
+      color: #454545;
+    }
+
+    a {
+      color: #454545;
+    }
+
+    body {
+      font-family: "Lato", sans-serif;
+    }
+
+    .accordion>li:first-child:after {
+      content: "\02EC";
+      color: #777;
+      font-weight: bold;
+      float: left;
+      margin-top: -20px;
+      margin-right: 5px;
+      font-size: 30px;
+    }
+
+
+    .activeTab>li:first-child:after {
+      content: "\032D";
+      margin-right: 10px;
+    }
+
+
+    /* Fixed sidenav, full height */
+    .sidenav {
+      border: 1px solid #c5c5c5;
+      height: 390px;
+      width: 20%;
+      background: #dde4eb;
+      padding-top: 20px;
+    }
+
+
+    /* Style the sidenav links and the dropdown button */
+    .sidenav a,
+    .accordion {
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #454545;
+      display: contents;
+      border: none;
+      background: none;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      outline: none;
+    }
+
+    /* On mouse-over */
+    p {
+      display: flex;
+      flex-direction: column;
+      width: 35%;
+    }
+
+    /* Main content */
+    .main {
+      border: 1px solid #c5c5c5;
+      margin-top: 16.5px;
+      height: 380px;
+      font-size: 16px;
+      width: 80%;
+      padding: 15px 30px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Add an active class to the active dropdown button */
+    .activeTab>li:first-child {
+
+      padding-left: 10px;
+      padding-right: 10px;
+
+    }
+
+    #epara>p {
+      display: flex;
+      flex-direction: column;
+      width: 30%;
+    }
+
+    .activeTab>li:first-child:active {
+
+      padding-left: 10px;
+      padding-right: 10px;
+
+    }
+
+    /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+    .dropdown-container {
+      display: none;
+      background-color: #262626;
+      padding-left: 8px;
+    }
+
+    /* Optional: Style the caret down icon */
+    .fa-caret-down {
+      float: right;
+      padding-right: 8px;
+    }
+
+    .sidenav li {
+      list-style: none;
+      padding: 0;
+      width: fit-content;
+      height: fit-content;
+    }
+
+    .sidenav>li {
+      padding: 5px 0;
+    }
+
+    #elfinder-wp_file_manager-cwd-thead>tr>td:nth-child(2) {
+      display: none;
+    }
+
+    .elfinder-cwd-selectall {
+      display: none;
+    }
+
+    .name {
+      background: linear-gradient(to bottom, #ebf1f6 0%, #abd3ee 50%, #89c3eb 51%, #d5ebfb 100%);
+      color: white;
+      width: 1000px !IMPORTANT;
+      font-weight: 600;
+      height: 20px;
+      padding-left: 10px;
+      text-align: center;
+    }
+
+    /* Some media queries for responsiveness */
+    @media screen and (max-height: 450px) {
+      .sidenav {
+        padding-top: 15px;
+      }
+
+      .sidenav a {
+        font-size: 18px;
+      }
+
+
+    }
+
+    li.femijet {
+      padding-left: 15px;
+    }
+
+    .activeTab>li {
+      display: block !important;
+    }
+
+    .activeTab>li:not(:first-child) {
+      display: block !important;
+      padding-left: 10px;
+      margin-top: 10px;
+    }
+
+    .accordion li:not(:first-child) {
+      display: none;
+    }
+
+    .main-content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: center;
+      padding-left: 100px;
+      grid-column-gap: 30px;
+    }
+
+    .fa {
+      padding-right: 5px;
+    }
+
+    
+
+    
+
+    .description-container {
+      position: absolute;
+      width: 100%;
+      min-height: 100px;
+      background-color: #dde4eb;
+      z-index: 1;
+      bottom: 0;
+      left: 0;
+      display: none;
+    }
+    
+.description-container p{
+  
+  display: flex;
+    flex-direction: row;
+}
+.main-content > p{
+
+  padding:10px;
+}
+.main-content {
+      display: none;
+    }
+    .epara, .edyta, .etreta, .ekakterta, .epesta, .egjashta, .eshtata, .eteta, .enenta, .edhjeta{
+  display: grid;
+}
+.description-container span{
+  padding-left: 10px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+    .desc {
+      position: absolute;
+      color: black;
+      font-size: 18;
+      left: 30px;
+      top: 0;
+    }
+
+    .size {
+      position: absolute;
+      color: black;
+      font-size: 18;
+      right: -30px;
+      bottom: 0;
+    }
+
+    .numFiles {
+      position: absolute;
+      color: black;
+      font-size: 18;
+      left: 30px;
+      bottom: 0;
+    }
+    .highlighted{
+      border-radius: 10px;
+    background-color: antiquewhite;
+    }
+    .ekaterta{
+      display: grid;
+    }
+    @media (min-width: 768px) and (max-width: 1024px) {
+  
+      .sidenav {
+    border: 1px solid #c5c5c5;
+    height: 390px;
+    width: 20%;
+    background: #dde4eb;
+    padding-top: 20px;
+    margin-left: 80px;
+}
+.sidenav {
+    border: 1px solid #c5c5c5;
+    height: 390px;
+    width: 20%;
+    background: #dde4eb;
+    padding-top: 20px;
+    margin-left: 80px;
+}
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <ul class="sidenav">
+      <ul class="accordion">
+        <li class="blendi"> <i class="fa fa-folder" aria-hidden="true"></i><a href="#"> Blendi</a></li>
+
+        <li>
+          <ul class="accordion">
+            <li class="ylli"> <i class="fa fa-folder" aria-hidden="true"></i><a href="#"> Ylli</a></li>
+            <li class="pictures">pictures</li>
+            <li class="music">music</li>
+
+
+          </ul>
+
+
+        </li>
+        <li>
+          <ul class="accordion">
+            <li class="agani"><i class="fa fa-folder" aria-hidden="true"></i> <a href="#"> Agani</a></li>
+            <li class="downloads">downloads</li>
+            <li class="videos">videos</li>
+
+          </ul>
+
+
+        </li>
+        <li>
+          <ul class="accordion">
+            <li class="lisa"><i class="fa fa-folder" aria-hidden="true"></i> Lisa</li>
+            <li class="videos1">
+              <a href="#">videos</a>
+            </li>
+
+            <li>
+              <ul class="accordion">
+
+                <li class="file"> <i class="fa fa-folder" aria-hidden="true"></i>file</li>
+                <li class="documents1">
+                  <a href="#">documents</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+    </ul>
+    <div class="main">
+      <div class="description-container">
+        <p class="desc">Description : <span></span></p>
+        <p class="size">Size : <span></span></p>
+        <p class="numFiles"> Number Of Files : <span></span></p>
+      </div>
+      <table>
+        <thead style="" id="elfinder-wp_file_manager-cwd-thead">
+          <tr class="tablerow" style="">
+            <td class="name" style="width: 178.238px;">Name <div class="elfinder-cwd-selectall" title="Select all items">
+                <input type="checkbox">
+              </div>
+              <div class="ui-resizable-handle ui-resizable-e ui-icon ui-icon-grip-dotted-vertical" style="z-index: 90;">
+              </div>
+            </td>
+            <td class="name" style="width: 81.475px;">Permission</td>
+          </tr>
+        </thead>
+      </table>
+      <div class="epara main-content">
+
+        <p description="yes" size="0.2mb" numOfFiles="4"><img src="folder.png">ylli</p>
+        <p description="no" size="0.4mb" numOfFiles="24"><img src="folder.png">agani</p>
+        <p description="blendi" size="0.67mb" numOfFiles="44"><img src="folder.png">lisa</p>
+        <p description="ylli" size="0.12mb" numOfFiles="64"><img src="folder.png">pictures</p>
+        <p description="yes" size="0.2mb" numOfFiles="4"><img src="folder.png">videos</p>
+        <p description="yes" size="0.2mb" numOfFiles="4"><img src="folder.png">music</p>
+        <p description="yes" size="0.2mb" numOfFiles="4"><img src="folder.png">files`</p>
+        <p description="yes" size="0.2mb" numOfFiles="4"><img src="iso-icon.png">bin</p>
+        <p description="yes" size="0.2mb" numOfFiles="4"><img src="forbidden-folder.png">bin</p>
+        <p description="yes" size="0.2mb" numOfFiles="4"><img src="folder.png">bin</p>
+        <div class="pershkrimi"></div>
+      </div>
+
+      <div class="edyta main-content">
+        <p description="yes" size="0.2mb" numOfFiles="4"><img src="folder.png">pictures</p>
+        <p description="yes" size="0.2mb" numOfFiles="4"><img src="folder.png">music</p>
+
+      </div>
+      <div class="etreta main-content">
+        <p description="yes" size="0.2mb" numOfFiles="4"><img src="folder.png">pictures</p>
+      </div>
+
+      <div class="ekaterta main-content">
+        <p description="yes" size="0.2mb" numOfFiles="4"><img src="folder.png">music</p>
+      </div>
+
+      <div class="epesta main-content">
+        <p description="yes" size="0.2mb" numOfFiles="4"><img src="folder.png">downloads</p>
+        <p description="yes" size="0.2mb" numOfFiles="4"><img src="folder.png">videos </p>
+
+      </div>
+
+      <div class="egjashta main-content">
+        <p description="yes" size="0.2mb" numOfFiles="4"><img src="folder.png">downloads</p>
+      </div>
+
+      <div class="eshtata main-content">
+        <p description="yes" size="0.2mb" numOfFiles="4"><img src="folder.png">videos</p>
+      </div>
+
+      <div class="eteta main-content">
+        <p description="yes" size="0.2mb" numOfFiles="4"><img src="folder.png">videos</p>
+      </div>
+
+
+      <div class="enenta main-content">
+        <p description="yes" size="0.2mb" numOfFiles="4"><img src="folder.png">file</p>
+      </div>
+
+      <div class="edhjeta main-content">
+        <p description="yes" size="0.2mb" numOfFiles="4"><img src="folder.png">documents</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function (e) {
+      $(function () {
+
+        $('.blendi').click(function (e) {
+          $('.main-content').hide('left');
+
+          $('.epara').show('fast');
+
+        });
+        $('.ylli').click(function (e) {
+          $('.main-content').hide('left');
+
+          $('.edyta').show('fast');
+
+        });
+        $('.pictures').click(function (e) {
+          $('.main-content').hide('left');
+
+          $('.etreta').show('fast');
+
+        });
+        $('.music').click(function (e) {
+          $('.main-content').hide('left');
+
+          $('.ekaterta').show('fast');
+
+        });
+        $('.agani').click(function (e) {
+          $('.main-content').hide('left');
+
+          $('.epesta').show('fast');
+
+        });
+        $('.downloads').click(function (e) {
+          $('.main-content').hide('left');
+
+          $('.egjashta').show('fast');
+
+        });
+        $('.videos').click(function (e) {
+          $('.main-content').hide('left');
+
+          $('.eshtata').show('fast');
+
+        });
+        $('.lisa').click(function (e) {
+          $('.main-content').hide('left');
+
+          $('.eteta').show('fast');
+
+        });
+        $('.videos1').click(function (e) {
+          $('.main-content').hide('left');
+
+          $('.enenta').show('fast');
+
+        });
+        $('.file').click(function (e) {
+          $('.main-content').hide('left');
+
+          $('.edhjeta').show('fast');
+
+        });
+        $('.documents1').click(function (e) {
+          $('.main-content').hide('left');
+
+          $('.enenta').show('fast');
+
+        });
+
+
+       
+        $('.accordion > li:first-child').click(function (e) {
+          $(this).parent().toggleClass('activeTab');
+        });
+
+
+        $('.main').click(function (event) {
+
+
+          if ($(event.target).closest('.main-content > p').length == 0 && $(".description-container:hidden").length == 0) {
+
+            if ($(event.target).closest('.description-container').length == 0) {
+              $('.description-container').hide('fast');
+          $('.main-content > p').removeClass('highlighted');
+
+            }
+          }
+        });
+
+        $('.main-content > p').click(function (e) {
+
+          $('.main-content > p').removeClass('highlighted');
+          $(this).addClass('highlighted');
+          $('.description-container').show('fast');
+
+          $description = $(this).attr("description");
+          $size = $(this).attr("size");
+          $numOfFiles = $(this).attr("numOfFiles");
+
+
+          $('.description-container > p.desc > span').html($description);
+          $('.description-container > p.size > span').html($size);
+          $('.description-container > p.numFiles > span').html($numOfFiles);
+
+        })
+
+
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>
