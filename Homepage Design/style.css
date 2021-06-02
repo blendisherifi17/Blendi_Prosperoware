@@ -3,6 +3,65 @@
 * {
   font-family: "Poppins", "sans-serif";
 }
+#myLinks{
+  margin-top: 20px;
+}
+@media(min-width:800px){
+  .mobile-container{
+    display: none;
+  }
+}
+.mobile-container{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.flex-wrap{
+  flex-wrap:nowrap !important;
+}
+.mobile-container {
+  max-width: 480px;
+  margin: auto;
+  background-color: #555;
+  color: white;
+  border-radius: 10px;
+}
+
+.topnav {
+  overflow: hidden;
+  padding-bottom: 23px;
+  background-color: #333;
+  position: relative;
+  padding-left: 15px;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  color: white;
+}
 @media(max-width:799px){
   .hero-banner{
     padding: 30px !important;
@@ -40,6 +99,7 @@
 
 }
 }
+
 @media(min-width:800px){
   form.accordion-blendi {
     height: 800px;
