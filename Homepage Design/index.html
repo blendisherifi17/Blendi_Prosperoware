@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ProsperoWare</title>
-  <link rel="stylesheet" href="css/example.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
@@ -21,7 +20,56 @@
 </head>
 
 <body>
-  
+  <header class="
+        d-flex
+        flex-wrap
+        align-items-center
+        justify-content-center
+        mt-3
+        mb-4
+      ">
+    <ul class="
+          nav
+          col-12 col-md-auto
+          mb-2 mb-md-0
+          d-none d-lg-flex d-xl-flex d-xxl-flex
+        ">
+      <li><a href="#" class="nav-link px-3">Solutions</a></li>
+      <li><a href="#" class="nav-link px-3">Products</a></li>
+      <li><a href="#" class="nav-link px-3">About</a></li>
+      <li>
+        <a href="#" class="nav-link px-3">Knowledge Center</a>
+      </li>
+      <li><a href="#" class="nav-link px-3">Contact</a></li>
+    </ul>
+    <a href="#" class="
+          d-flex
+          justify-content-center
+          align-items-center
+          col-md-3
+          mb-2 mb-md-0
+          text-dark text-decoration-none
+          navbar-brand
+        ">
+      <img src="media/prosperoware-logo.png" style="height: 56px; width: 220px" alt="logo" />
+    </a>
+
+    <form class="
+          col-12 col-lg-auto
+          mb-3 mb-lg-0
+          me-lg-3
+          d-none d-xxl-flex
+          flex-fill
+          p-2
+        ">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#00A5C0" class="bi bi-search"
+        viewBox="0 0 16 16" style="margin-left: 5px">
+        <path
+          d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+      </svg>
+      <input type="search" class="form-control" aria-label="Search" style="border: none" />
+    </form>
+  </header>
   <div class="body-wrapper">
     <section class="hero-banner height-100" data-snap-point>
       <div class="container-fluid">
@@ -330,14 +378,56 @@
 
 
   </script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
   <!-- jQuery Easing -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-  <script src="js/jquery.snapScroll.min.js"></script>
-  <script>  $(document).ready(function () {
-      $('.body-wrapper').snapScroll();
-    });
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" 
+  integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" 
+  crossorigin="anonymous">
+</script>
+<script src="snap-scroll.js"></script>  <script>
+ $("header,section,footer").SnapScroll({
+
+// Add classes to elements
+classes:true,                   
+
+// Class applied to snap point elements
+classSnap:"snap-scroll",              
+
+// Class applied to a snap point element when within the window
+classVisible:"snap-scroll-visible",         
+
+// Class applied to a snap point element when snapped
+classActive:"snap-scroll-active",         
+
+// Use element id in hash
+hashes:false,                   
+
+// Delay between scroll events needed to trigger scroll action
+scrollDelay:500,                  
+
+// Interval used for wheel to trigger scroll action
+wheelInterval:100,                 
+
+// The amount of time it takes to animate to a snap point
+animateDuration:200,       
+
+// The amount of time to wait after an animation is complete before scrolling can be triggered         
+animateTimeBuffer:1000,                
+
+// Snap to the top of page regardless of there being an element
+snapTop:true,           
+
+// Snap to the bottom of page regardless of there being an element        
+snapBottom:true,                  
+
+// Extra snap points not tied to an element
+snaps:[],                     
+
+// Deviation in milliseconds from the average needed to separate wheel events
+maxWheelDeviation:100       
+
+});
+
   </script>
 </body>
 
